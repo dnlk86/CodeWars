@@ -31,4 +31,4 @@ class RomanNumerals {
     }
 }
 
-console.log(RomanNumerals.fromRoman("IV"));
+module.exports = RomanNumerals;

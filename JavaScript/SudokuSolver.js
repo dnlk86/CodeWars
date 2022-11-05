@@ -21,18 +21,14 @@ class SudokuSolver {
 
     static findNextEmpty(puzzle) {
         for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                if (puzzle[i][j] === 0) return [i, j];
-            }
+            let j = puzzle[i].indexOf(0);
+            if (j !== -1) return [i, j];
         }
         return [-1, -1];
     }
 
     static checkRow(puzzle, row, num) {
-        for (let j = 0; j < 9; j++) {
-            if (puzzle[row][j] === num) return false;
-        }
-        return true;
+        return puzzle[row].indexOf(num) !== -1 ? false : true;
     }
 
     static checkCol(puzzle, col, num) {
